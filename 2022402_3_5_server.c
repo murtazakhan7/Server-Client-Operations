@@ -12,7 +12,7 @@
 #define MAX_BUFFER 4096
 #define MAX_ARRAY_SIZE 10000
 
-// 2022532 - Student registration number
+
 
 // Function to merge two sorted arrays
 void merge(int arr[], int left[], int leftSize, int right[], int rightSize) {
@@ -59,7 +59,7 @@ int deserializeArray(char *buffer, int arr[]) {
     return i;  // Return the size of the array
 }
 
-// 2022532 - Student registration number
+
 
 // Simple merge sorting approach
 void simpleSort(int arr[], int size, int numClients) {
@@ -150,7 +150,7 @@ void simpleSort(int arr[], int size, int numClients) {
         printf("Sent %d elements to client %d\n", thisChunkSize, i + 1);
     }
     
-    // 2022532 - Student registration number
+ 
     
     // Receive sorted chunks from all clients
     for (int i = 0; i < numClients; i++) {
@@ -197,7 +197,7 @@ void simpleSort(int arr[], int size, int numClients) {
     printf("Simple merge sorting completed in: %ld.%06ld seconds\n", seconds, micros);
 }
 
-// 2022532 - Student registration number
+
 
 // Parallel merge sorting approach
 void parallelSort(int arr[], int size, int numClients) {
@@ -288,7 +288,7 @@ void parallelSort(int arr[], int size, int numClients) {
         printf("Sent %d elements to client %d\n", thisChunkSize, i + 1);
     }
     
-    // 2022532 - Student registration number
+
     
     // Receive sorted chunks from all clients
     for (int i = 0; i < numClients; i++) {
@@ -371,7 +371,7 @@ void parallelSort(int arr[], int size, int numClients) {
         }
     }
     
-    // 2022532 - Student registration number
+
     
     // Copy final merged result to original array
     memcpy(arr, currentChunks[0], size * sizeof(int));
@@ -396,7 +396,6 @@ void parallelSort(int arr[], int size, int numClients) {
     printf("Parallel merge sorting completed in: %ld.%06ld seconds\n", seconds, micros);
 }
 
-// 2022532 - Student registration number
 
 // Function to print an array
 void printArray(int arr[], int size) {
