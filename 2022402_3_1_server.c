@@ -22,12 +22,12 @@ int main() {
     long long total_sum = 0;
     
     // Read integers from file
-    FILE *file = fopen("integersQ1.txt", "r");
+    FILE *file = fopen("./integarsQ1.txt", "r");
     if (file == NULL) {
         perror("File opening failed");
         exit(EXIT_FAILURE);
     }
-    
+    //2022402
     int temp;
     while (fscanf(file, "%d", &temp) == 1 && num_count < MAX_NUMBERS) {
         numbers[num_count++] = temp;
@@ -58,7 +58,7 @@ int main() {
         perror("Bind failed");
         exit(EXIT_FAILURE);
     }
-    
+    //2022402
     // Listen for connections
     if (listen(server_fd, MAX_CLIENTS) < 0) {
         perror("Listen failed");
@@ -115,7 +115,7 @@ int main() {
         
         start_idx += this_client_numbers;
     }
-    
+    //2022402
     // Receive results from clients
     for (int i = 0; i < client_count; i++) {
         char buffer[BUFFER_SIZE] = {0};
@@ -135,3 +135,4 @@ int main() {
     close(server_fd);
     return 0;
 }
+//2022402

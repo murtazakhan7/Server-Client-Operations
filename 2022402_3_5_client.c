@@ -38,7 +38,7 @@ void merge(int arr[], int l, int m, int r) {
         }
         k++;
     }
-    
+    //2022402
     // Copy the remaining elements of L[], if any
     while (i < n1) {
         arr[k] = L[i];
@@ -77,6 +77,7 @@ void serializeArray(int arr[], int size, char *buffer) {
         strcat(buffer, temp);
     }
 }
+//2022402
 
 // Function to deserialize a string into an array
 int deserializeArray(char *buffer, int arr[]) {
@@ -114,7 +115,7 @@ void deserializeMergePair(char *buffer, int left[], int right[], int *leftSize, 
     }
 }
 
-
+//2022402
 
 // Function to merge two already sorted arrays
 void mergeSortedArrays(int left[], int leftSize, int right[], int rightSize, int result[]) {
@@ -272,6 +273,7 @@ int main(int argc, char *argv[]) {
         
         printf("Sent merged result of %d elements\n", leftSize + rightSize);
     }
+    //2022402
     
     // Close the sockets
     close(sock);

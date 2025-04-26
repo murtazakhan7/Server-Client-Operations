@@ -7,6 +7,8 @@
 #include <sys/socket.h>
 #include <pthread.h>
 
+
+//2022402
 #define PORT 8082
 #define MAX_CLIENTS 10
 #define BUFFER_SIZE 8192
@@ -53,7 +55,7 @@ void print_matrix(Matrix *mat) {
         printf("\n");
     }
 }
-
+// 2022402
 // Thread function to handle client connections
 void *client_handler(void *arg) {
     int client_socket = *((int *)arg);
@@ -118,6 +120,7 @@ void *client_handler(void *arg) {
             }
         }
     }
+    //2022402
     pthread_mutex_unlock(&mutex);
     
     printf("Received result for row %d\n", start_row);
@@ -152,10 +155,8 @@ int main() {
         }
     }
     
-    // You can also read from files if they exist
-    // read_matrix(&A, "matrixA.txt");
-    // read_matrix(&B, "matrixB.txt");
-    
+
+    //2022402
     // Check if dimensions are compatible for multiplication
     if (A.cols != B.rows) {
         fprintf(stderr, "Error: Incompatible matrix dimensions for multiplication\n");
@@ -201,6 +202,7 @@ int main() {
         perror("Listen failed");
         exit(EXIT_FAILURE);
     }
+    //2022402
     
     printf("Server listening on port %d\n", PORT);
     printf("Waiting for clients to help with matrix multiplication...\n");
@@ -247,4 +249,5 @@ int main() {
             close(server_fd);
             
             return 0;
+    //2022402
         }

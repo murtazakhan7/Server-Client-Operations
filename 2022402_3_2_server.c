@@ -15,6 +15,7 @@
 #define BUFFER_SIZE 1024
 #define TIMEOUT_SECONDS 30
 
+//2022402
 typedef struct {
     long number;
     int assigned;
@@ -43,7 +44,7 @@ int main() {
         tasks[i].result = -1;
         tasks[i].client_id = -1;
     }
-    
+    //2022402
     int server_fd;
     struct sockaddr_in address;
     int addrlen = sizeof(address);
@@ -71,7 +72,7 @@ int main() {
         perror("Bind failed");
         exit(EXIT_FAILURE);
     }
-    
+    //2022402
     // Listen for connections
     if (listen(server_fd, MAX_CLIENTS) < 0) {
         perror("Listen failed");
@@ -120,7 +121,7 @@ int main() {
             perror("Select error");
             break;
         }
-        
+        //2022402
         // Check if it's the server socket (new connection)
         if (FD_ISSET(server_fd, &working_set)) {
             int new_socket;
@@ -224,7 +225,7 @@ int main() {
                 }
             }
         }
-        
+        //2022402
         // Check if any remaining tasks need to be assigned to connected clients
         for (int i = 0; i < MAX_CLIENTS; i++) {
             if (client_sockets[i] > 0) {
@@ -255,6 +256,7 @@ int main() {
             printf("%ld: %s\n", tasks[i].number, tasks[i].result ? "PRIME" : "NOT PRIME");
         }
     }
+    //2022402
     
     // Cleanup
     close(server_fd);

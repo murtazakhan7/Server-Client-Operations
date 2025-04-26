@@ -6,13 +6,12 @@
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <time.h>
-
 #define PORT 8080
 #define MAX_CLIENTS 5
 #define MAX_BUFFER 4096
 #define MAX_ARRAY_SIZE 10000
 
-
+//2022402
 
 // Function to merge two sorted arrays
 void merge(int arr[], int left[], int leftSize, int right[], int rightSize) {
@@ -45,7 +44,7 @@ void serializeArray(int arr[], int size, char *buffer) {
         strcat(buffer, temp);
     }
 }
-
+//2022402
 // Function to deserialize a string into an array
 int deserializeArray(char *buffer, int arr[]) {
     int i = 0;
@@ -58,8 +57,6 @@ int deserializeArray(char *buffer, int arr[]) {
     
     return i;  // Return the size of the array
 }
-
-
 
 // Simple merge sorting approach
 void simpleSort(int arr[], int size, int numClients) {
@@ -150,7 +147,7 @@ void simpleSort(int arr[], int size, int numClients) {
         printf("Sent %d elements to client %d\n", thisChunkSize, i + 1);
     }
     
- 
+ //2022402
     
     // Receive sorted chunks from all clients
     for (int i = 0; i < numClients; i++) {
@@ -197,7 +194,7 @@ void simpleSort(int arr[], int size, int numClients) {
     printf("Simple merge sorting completed in: %ld.%06ld seconds\n", seconds, micros);
 }
 
-
+//2022402
 
 // Parallel merge sorting approach
 void parallelSort(int arr[], int size, int numClients) {
@@ -371,7 +368,7 @@ void parallelSort(int arr[], int size, int numClients) {
         }
     }
     
-
+//2022402
     
     // Copy final merged result to original array
     memcpy(arr, currentChunks[0], size * sizeof(int));
@@ -418,7 +415,7 @@ int isSorted(int arr[], int size) {
     }
     return 1;
 }
-
+//2022402
 int main(int argc, char *argv[]) {
     if (argc != 3) {
         printf("Usage: %s <array_size> <num_clients>\n", argv[0]);
@@ -480,6 +477,6 @@ int main(int argc, char *argv[]) {
     
     free(arr);
     free(arrCopy);
-    
+    //2022402
     return 0;
 }

@@ -7,7 +7,6 @@
 #include <sys/socket.h>
 #include <pthread.h>
 #include <ctype.h>
-
 #define PORT 8083
 #define MAX_CLIENTS 10
 #define BUFFER_SIZE 16384
@@ -15,7 +14,7 @@
 #define MAX_WORD_LENGTH 100
 #define MAX_WORD_COUNT 10000
 #define TOP_N 10
-
+//2022402
 // Structure for word frequency
 typedef struct {
     char word[MAX_WORD_LENGTH];
@@ -63,6 +62,7 @@ char* read_file(const char* filename, long* file_size) {
     return content;
 }
 
+//2022402
 // Function to merge word frequencies from a client into the global dictionary
 void merge_word_frequencies(char* buffer) {
     char* token = strtok(buffer, " ");
@@ -132,6 +132,7 @@ void* client_handler(void* arg) {
         end_pos = file_size;
     }
     
+    //2022402
     // Move to next chunk for future clients
     next_chunk = end_pos;
     
@@ -170,6 +171,8 @@ void* client_handler(void* arg) {
     sprintf(buffer, "%d", chunk_length);
     send(client_socket, buffer, strlen(buffer), 0);
     
+
+    //2022402
     // Wait for acknowledgment
     memset(buffer, 0, BUFFER_SIZE);
     read(client_socket, buffer, BUFFER_SIZE);
@@ -286,7 +289,7 @@ int main() {
     for (int i = 0; i < TOP_N && i < global_word_count; i++) {
         printf("%d. \"%s\": %d occurrences\n", i+1, global_word_freq[i].word, global_word_freq[i].count);
     }
-    
+    //2022402
     // Cleanup
     close(server_fd);
     

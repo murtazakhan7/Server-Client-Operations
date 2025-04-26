@@ -8,7 +8,7 @@
 #define PORT 8080
 #define BUFFER_SIZE 1024
 #define MAX_NUMBERS 10000
-
+//2022402
 int main() {
     int sock = 0;
     struct sockaddr_in serv_addr;
@@ -45,6 +45,7 @@ int main() {
         close(sock);
         exit(EXIT_FAILURE);
     }
+    // 2022402
     
     // Parse the received numbers
     int numbers[MAX_NUMBERS];
@@ -84,5 +85,6 @@ int main() {
     // Close socket
     close(sock);
     
+    //2022402
     return 0;
 }

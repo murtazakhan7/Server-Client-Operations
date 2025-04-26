@@ -17,6 +17,7 @@ typedef struct {
     int count;
 } WordFreq;
 
+//2022402
 // Function to convert a word to lowercase
 void to_lowercase(char* word) {
     for (int i = 0; word[i]; i++) {
@@ -67,7 +68,7 @@ int count_word_frequencies(char* text, WordFreq* word_freq) {
                 }
             }
         }
-        
+        //2022402
         token = strtok(NULL, " \t\n\r\f\v.,;:!?\"'()[]{}-");
     }
     
@@ -94,7 +95,7 @@ int main() {
         perror("Invalid address / Address not supported");
         exit(EXIT_FAILURE);
     }
-    
+    //2022402
     // Connect to server
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
         perror("Connection failed");
@@ -136,6 +137,7 @@ int main() {
         exit(EXIT_FAILURE);
     }
     
+    //2022402
     chunk[valread] = '\0';
     printf("Received %d bytes of text\n", valread);
     
@@ -164,6 +166,6 @@ int main() {
     // Cleanup
     free(chunk);
     close(sock);
-    
+    //2022402
     return 0;
 }

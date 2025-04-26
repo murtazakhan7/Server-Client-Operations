@@ -8,7 +8,7 @@
 #define PORT 8082
 #define BUFFER_SIZE 8192
 #define MAX_SIZE 100
-
+//2022402
 // Matrix structure
 typedef struct {
     int rows;
@@ -89,6 +89,7 @@ int main() {
             }
         }
     }
+    //2022402
     
     // Read matrix B data (entire matrix)
     for (int i = 0; i < B_rows; i++) {
@@ -119,6 +120,8 @@ int main() {
     // Send result back to server
     memset(buffer, 0, BUFFER_SIZE);
     int pos = 0;
+
+    //2022402
     
     // Format: rows_processed, [C data]
     pos += sprintf(buffer + pos, "%d ", rows_to_process);

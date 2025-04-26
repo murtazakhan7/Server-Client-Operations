@@ -17,13 +17,13 @@ int is_prime(long number) {
     if (number % 2 == 0 || number % 3 == 0) return 0;  // Divisible by 2 or 3
     
     // Use 6k +/- 1 optimization to check for primality
-    long sqrt_num = sqrt(number);
+    long sqrt_num = (long)sqrt(number);
     for (long i = 5; i <= sqrt_num; i += 6) {
         if (number % i == 0 || number % (i + 2) == 0)
           
             return 0;  // Found a divisor
     }
-    
+    //2022402
     return 1;  // No divisors found, number is prime
 }
 
@@ -53,7 +53,7 @@ int main() {
         perror("Connection failed");
         exit(EXIT_FAILURE);
     }
-    
+    //2022402
     printf("Connected to server\n");
     
     // Receive number to check
@@ -77,11 +77,11 @@ int main() {
     memset(buffer, 0, BUFFER_SIZE);
     sprintf(buffer, "%d", result);
     send(sock, buffer, strlen(buffer), 0);
-    
+    //2022402
     printf("Sent result to server\n");
     
     // Close socket
-    close(sock);
+    close(sock);  //2022402
     
     return 0;
 }
