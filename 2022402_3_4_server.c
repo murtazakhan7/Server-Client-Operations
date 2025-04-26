@@ -1,4 +1,4 @@
-// 2022532_3_4_server.c
+// 2022402_3_4_server.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
