@@ -1,4 +1,4 @@
-// 2022532_3_4_client.c
+// 2022402_3_4_client.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -154,7 +154,7 @@ int main() {
     
     for (int i = 0; i < word_count; i++) {
         pos += sprintf(buffer + pos, "%s %d ", word_freq[i].word, word_freq[i].count);
-        // Reg number: 2022532
+       
     }
     
     send(sock, buffer, strlen(buffer), 0);
