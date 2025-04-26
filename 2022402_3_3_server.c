@@ -1,4 +1,4 @@
-// 2022532_3_3_server.c
+// 2022402_3_3_server.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -226,7 +226,7 @@ int main() {
         }
         
         thread_count++;
-        // Reg number: 2022532
+    
         
         // Check if we've processed all rows
         if (thread_count >= A.rows) {
