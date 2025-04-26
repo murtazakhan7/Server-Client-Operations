@@ -9,8 +9,6 @@
 #define MAX_BUFFER 4096
 #define MAX_ARRAY_SIZE 10000
 
-// 2022532 - Student registration number
-
 // Function to merge two sorted arrays
 void merge(int arr[], int l, int m, int r) {
     int i, j, k;
@@ -56,7 +54,6 @@ void merge(int arr[], int l, int m, int r) {
     }
 }
 
-// 2022532 - Student registration number
 
 // Merge Sort implementation
 void mergeSort(int arr[], int l, int r) {
@@ -117,7 +114,7 @@ void deserializeMergePair(char *buffer, int left[], int right[], int *leftSize, 
     }
 }
 
-// 2022532 - Student registration number
+
 
 // Function to merge two already sorted arrays
 void mergeSortedArrays(int left[], int leftSize, int right[], int rightSize, int result[]) {
@@ -201,7 +198,7 @@ int main(int argc, char *argv[]) {
     serializeArray(chunk, size, sortedBuffer);
     send(sock, sortedBuffer, strlen(sortedBuffer), 0);
     
-    // 2022532 - Student registration number
+
     
     // Now connect for parallel sort tasks
     int parallelSock = 0;
