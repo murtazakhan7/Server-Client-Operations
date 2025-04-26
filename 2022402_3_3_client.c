@@ -1,4 +1,4 @@
-// 2022532_3_3_client.c
+// 2022402_3_3_client.c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -109,7 +109,7 @@ int main() {
             C.data[i][j] = 0;
             for (int k = 0; k < A_cols; k++) {
                 C.data[i][j] += A.data[i][k] * B.data[k][j];
-                // Reg number: 2022532
+                
             }
         }
     }
